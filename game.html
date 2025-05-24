@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Eaglercraft Game</title>
+</head>
+<body style="margin:0;padding:0;background:black;">
+<script>
+(async function(){
+    const ws = new WebSocket("wss://eb490bbc-b23a-4e7a-a310-9e0cb6dee2d3-00-8d3k6zjqqitn.janeway.replit.dev/");
+    ws.binaryType = 'arraybuffer';
+
+    ws.onopen = () => console.log("Connected to proxy");
+    ws.onerror = (e) => console.error("WebSocket error", e);
+    ws.onclose = () => console.warn("WebSocket closed");
+
+    // Example: Dummy handshake (replace with Eaglercraft core if you have it)
+    ws.onmessage = (e) => console.log("Server:", new Uint8Array(e.data));
+})();
+</script>
+<h1 style="color:white;text-align:center;margin-top:20%;">Eaglercraft is loading...</h1>
+</body>
+</html>
